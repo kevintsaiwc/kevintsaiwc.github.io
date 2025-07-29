@@ -12,7 +12,7 @@ html, body {
 aside {
     background-color: gainsboro;
     padding: 15px;
-    margin: 0;
+    margin-left: 20px;
     border-radius: 8px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     float: left;
@@ -89,6 +89,7 @@ ul.tree-list ul {
 
 .main-content {
     margin-left: 270px;
+    margin-right: 80px;
     padding: 20px;
     height: calc(100vh - 100px);
     overflow-y: auto;
@@ -100,7 +101,6 @@ ul.tree-list ul {
     line-height: 1.6;
     text-align: justify;
 }
-
 
 footer {
     position: absolute;
@@ -142,7 +142,86 @@ a#herf_main:hover {
 }
 
 @media print {
-    body {
-        background-color: white;
+    html, body {
+        background-color: white !important;
+        color: black;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        margin: 0;
+        padding: 0;
+    }
+
+    aside,
+    .tree-list,
+    .toggle-btn {
+        display: none !important;
+    }
+
+    .main-content {
+        margin: 0 !important;
+        padding: 20px;
+        height: auto !important;
+        overflow: visible !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .main-content p {
+        font-size: 14pt;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    footer {
+        position: static !important;
+        background-color: white !important;
+        color: black !important;
+        page-break-before: always;
+    }
+
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+
+    a[href]:after {
+        content: none !important;
     }
 }
+@media screen and (max-width: 480px) {
+    html, body {
+        overflow: auto;
+        width: 100%;
+        height: auto;
+        font-size: 14px;
+    }
+
+    aside {
+        margin-left: 10px;
+        width: 100%;
+        max-height: 150px;
+        overflow-y: auto;
+        float: none;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 10px;
+    }
+
+    .main-content {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 15px;
+        height: auto !important;
+        overflow: visible !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    footer {
+        position: static !important;
+        width: 100% !important;
+        padding: 10px;
+    }
+}
+
