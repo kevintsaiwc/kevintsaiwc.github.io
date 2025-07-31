@@ -153,7 +153,7 @@ b#herf_main:hover {
 }
 
 
-img {
+img.crown-car {
     max-width: 40% !important;
     page-break-inside: avoid;
     -webkit-transition: -webkit-transform 4s;
@@ -161,7 +161,7 @@ img {
     -o-transition: -o-transform 4s;
     transition: transform 4s;
 }
-img:hover {
+img.crown-car:hover {
     -webkit-transform: rotate(360deg) scale(1.25, 1.25);
     -moz-transform: rotate(360deg) scale(1.25, 1.25);
     -o-transform: rotate(360deg) scale(1.25, 1.25);
