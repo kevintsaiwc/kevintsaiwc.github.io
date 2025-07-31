@@ -103,29 +103,3 @@ document.querySelectorAll('img').forEach(img => {
     alert('Right-clicking on images is disabled.');
   });
 });
-
-const screenshotBlocker = document.createElement('div');
-screenshotBlocker.style.position = 'fixed';
-screenshotBlocker.style.top = '0';
-screenshotBlocker.style.left = '0';
-screenshotBlocker.style.width = '100%';
-screenshotBlocker.style.height = '100%';
-screenshotBlocker.style.backgroundColor = 'black';
-screenshotBlocker.style.zIndex = '99999';
-screenshotBlocker.style.display = 'none';
-screenshotBlocker.style.pointerEvents = 'none';
-document.body.appendChild(screenshotBlocker);
-
-window.addEventListener('blur', () => {
-  screenshotBlocker.style.display = 'block';
-});
-
-window.addEventListener('focus', () => {
-  screenshotBlocker.style.display = 'none';
-});
-
-window.addEventListener('blur', () => {
-  screenshotBlocker.style.display = 'block';
-  alert('Screenshot attempt detected. The screen is now protected and incident is reported.');
-});
-
