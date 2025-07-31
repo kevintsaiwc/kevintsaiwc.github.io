@@ -152,6 +152,22 @@ b#herf_main:hover {
     color: red;
 }
 
+
+img {
+    max-width: 40% !important;
+    page-break-inside: avoid;
+    -webkit-transition: -webkit-transform 4s;
+    -moz-transition: -moz-transform 4s;
+    -o-transition: -o-transform 4s;
+    transition: transform 4s;
+}
+img:hover {
+    -webkit-transform: rotate(360deg) scale(1.25, 1.25);
+    -moz-transform: rotate(360deg) scale(1.25, 1.25);
+    -o-transform: rotate(360deg) scale(1.25, 1.25);
+    transform: rotate(360deg) scale(1.25, 1.25);
+}
+
 @media print {
     html, body {
         background-color: white !important;
@@ -194,6 +210,14 @@ b#herf_main:hover {
     img {
         max-width: 100% !important;
         page-break-inside: avoid;
+	}
+	
+	.main-content img.crown-car {
+        display: none;
+    }
+	
+	.hide-on-print {
+        display: none;
     }
 
     a[href]:after {
